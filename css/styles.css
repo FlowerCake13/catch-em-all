@@ -1,0 +1,13 @@
+#container{
+	width: calc(100vw);
+	height: calc(100vh);
+}
+
+#player{
+	position: absolute;
+}
+
+#location{
+	position: absolute;
+	bottom: 10px;
+}
