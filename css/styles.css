@@ -1,3 +1,7 @@
+body{
+	margin: 0px;
+}
+
 #container{
 	width: calc(100vw);
 	height: calc(100vh);
@@ -5,9 +9,30 @@
 
 #player{
 	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 
 #location{
 	position: absolute;
 	bottom: 10px;
+}
+
+#modal-container{
+	width: calc(100vw);
+	display: none;
+	justify-content: center;
+}
+
+#modal{
+	/*background-color: red;*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 275px;
+	width: 225px;
 }
