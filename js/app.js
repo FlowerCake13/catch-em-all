@@ -47,7 +47,7 @@ document.addEventListener('keydown', function(e){
 })
 
 function randLocation(){
-	return Math.floor(Math.random() * 200)
+	return Math.floor(Math.random() * 50)
 }
 
 function generateScene(){
