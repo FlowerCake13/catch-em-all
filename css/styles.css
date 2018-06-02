@@ -1,5 +1,6 @@
 body{
 	margin: 0px;
+	font-family: 'Varela', sans-serif;
 }
 
 #container{
@@ -18,21 +19,35 @@ body{
 	bottom: 10px;
 }
 
-#modal-container{
-	width: calc(100vw);
+#modal{
 	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
-#modal{
-	/*background-color: red;*/
+#modal-content{
+	background-color: white;
 	border-style: solid;
+	text-align: center;
 	border-width: 1px;
 	border-color: black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: 275px;
-	width: 225px;
+	height: 35%;
+	width: auto;
+}
+
+#span{
+	float: right;
+	font-size: 28px;
+}
+
+#span:hover{
+	color: gray;
+	cursor: pointer;
 }

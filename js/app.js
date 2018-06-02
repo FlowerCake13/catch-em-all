@@ -1,8 +1,9 @@
 var player = document.getElementById('player');
 var loca = document.getElementById('location');
-var modal = document.getElementById('modal-container');
+var modal = document.getElementById('modal');
 var img = document.getElementById('modal-img');
 var pokeName = document.getElementById('modal-name');
+var close = document.getElementById('span');
 var playerTop = 0;
 var playerLeft = 0;
 var counter = 1;
@@ -46,7 +47,7 @@ document.addEventListener('keydown', function(e){
 })
 
 function randLocation(){
-	return Math.floor(Math.random() * 50)
+	return Math.floor(Math.random() * 200)
 }
 
 function generateScene(){
@@ -62,7 +63,6 @@ function generateScene(){
 			console.log(response);
 			loca.innerHTML = "Location: " + response.name
 			arr = response.pokemon_encounters
-			generatePokemon()
 		}
 	}
 }
@@ -86,10 +86,25 @@ function generatePokemon(){
 			console.log(response.sprites.front_default);
 			console.log(response.name);
 			modal.style.display = 'flex';
-		img.src = response.sprites.front_default;
-		img.style.height = '220px'
-		img.style.width = '220px'
-		pokeName.innerHTML = response.name
+			img.src = response.sprites.front_default;
+			img.style.height = '220px'
+			img.style.width = '220px'
+			pokeName.innerHTML = response.name
+			setTimeout(function(){
+				modal.style.display = 'none';
+			}, 5000)
+			close.addEventListener('click', function(){
+				modal.style.display = 'none';
+			})
 		}
 	}
 }
+
+(function loop(){
+	var randomNum = Math.floor((Math.random() * 15000) + 6000);
+	setTimeout(function(){
+		generatePokemon()
+		alert('you found a pokemon!')
+		loop()
+	}, randomNum) 
+})();
